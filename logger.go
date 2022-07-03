@@ -20,6 +20,14 @@ func (l *Logger) AddHook(hook log.Hook) {
 	l.entry.Logger.AddHook(hook)
 }
 
+func (l *Logger) SetLevel(level log.Level) {
+	l.entry.Logger.SetLevel(level)
+}
+
+func ParseLevel(lvl string) (log.Level, error) {
+	return log.ParseLevel(lvl)
+}
+
 type Data map[string]interface{}
 
 // Add a map of fields to the Logger.

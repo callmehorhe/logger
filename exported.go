@@ -3,6 +3,8 @@ package logger
 import (
 	"io"
 	"time"
+
+	log "github.com/sirupsen/logrus"
 )
 
 var std = New()
@@ -10,6 +12,10 @@ var std = New()
 // SetOutput sets the standard logger output.
 func SetOutput(out io.Writer) {
 	std.SetOutput(out)
+}
+
+func SetLevel(level log.Level) {
+	std.SetLevel(level)
 }
 
 func WithLatency(latency time.Duration, format time.Duration) *Logger {
