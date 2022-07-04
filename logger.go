@@ -20,6 +20,10 @@ func (l *Logger) AddHook(hook log.Hook) {
 	l.entry.Logger.AddHook(hook)
 }
 
+func (l *Logger) SetFormatter(formatter log.Formatter) {
+	l.entry.Logger.SetFormatter(formatter)
+}
+
 func (l *Logger) SetLevel(level log.Level) {
 	l.entry.Logger.SetLevel(level)
 }

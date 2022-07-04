@@ -14,6 +14,10 @@ func SetOutput(out io.Writer) {
 	std.SetOutput(out)
 }
 
+func SetFormatter(formatter log.Formatter) {
+	std.SetFormatter(formatter)
+}
+
 func SetLevel(level log.Level) {
 	std.SetLevel(level)
 }
