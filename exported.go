@@ -14,16 +14,20 @@ func SetOutput(out io.Writer) {
 	std.SetOutput(out)
 }
 
-func SetFormatter(formatter log.Formatter) {
-	std.SetFormatter(formatter)
-}
-
 func SetLevel(level log.Level) {
 	std.SetLevel(level)
 }
 
+func SetFormatter(formatter log.Formatter) {
+	std.SetFormatter(formatter)
+}
+
 func WithLatency(latency time.Duration, format time.Duration) *Logger {
 	return std.WithLatency(latency, format)
+}
+
+func WithFields(fields Data) *Logger {
+	return std.WithFields(fields)
 }
 
 // Debug logs a message at level Debug on the standard logger.
