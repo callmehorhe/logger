@@ -14,18 +14,22 @@ func SetOutput(out io.Writer) {
 	std.SetOutput(out)
 }
 
+// SetLevel sets the logger level.
 func SetLevel(level log.Level) {
 	std.SetLevel(level)
 }
 
+// SetFormatter sets the logger formatter.
 func SetFormatter(formatter log.Formatter) {
 	std.SetFormatter(formatter)
 }
 
+// WithLatency adds latency to the logger.
 func WithLatency(latency time.Duration, format time.Duration) *Logger {
 	return std.WithLatency(latency, format)
 }
 
+// WithFields add a map of fields to the Logger.
 func WithFields(fields Data) *Logger {
 	return std.WithFields(fields)
 }
